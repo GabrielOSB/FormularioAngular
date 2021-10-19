@@ -1,0 +1,23 @@
+.logo{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+
+    margin-left: 50px;
+}
+
+.header a { 
+    display: flex;
+    align-items: center;
+}
+
+.material-icons{
+    padding-right: 10px;
+}
+
+.header i{
+    padding-left: 25px;
+    margin-left: 25px;
+    border-left: 1px solid black;
+}
