@@ -1,14 +1,19 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "Galaxy Fold",
-            "price": 6999.99
-        },
-        {
-            "id": 2,
-            "name": "Galaxy S10+",
-            "price": 2500.00
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "name": "Galaxy Fold",
+      "price": 6999.99
+    },
+    {
+      "id": 2,
+      "name": "Galaxy S10+",
+      "price": 2500
+    },
+    {
+      "name": "Gabriel Sena",
+      "price": "2545.45",
+      "id": 3
+    }
+  ]
 }
