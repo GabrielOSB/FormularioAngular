@@ -14,6 +14,11 @@
       "name": "Gabriel Sena",
       "price": "2545.45",
       "id": 3
+    },
+    {
+      "name": "Samsung S20+",
+      "price": "2500.01",
+      "id": 4
     }
   ]
 }
