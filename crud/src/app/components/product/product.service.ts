@@ -10,17 +10,23 @@ import { Observable } from "rxjs";
 })
 export class ProductService {
   baseUrl = "http://localhost:3001/products";
+  baseUrlAPI = "http://localhost:55863/Product/v1/api";
 
   constructor(private snackbar: MatSnackBar, private http: HttpClient) {}
 
-  showMessage(msg: string): void {
+  showMessage(msg: string, isError: boolean = false): void {
     this.snackbar.open(msg, "X", {
       duration: 3000,
       horizontalPosition: "right",
       verticalPosition: "top",
+      panelClass: isError ? ['msg-error'] : ['msg-success']
     });
   }
 
+  getProductAPI() {
+    return this.http.get(this.baseUrlAPI)
+  }
+  
   create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product);
   }

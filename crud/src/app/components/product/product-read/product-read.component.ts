@@ -10,14 +10,17 @@ import { ProductService } from '../product.service';
 export class ProductReadComponent implements OnInit {
 
   products!: Product[]
-  displayedColumns = ['id', 'name', 'price', 'action']
+  productsAPI!: any[];
+  displayedColumns = ['name', 'price', 'action']
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.productService.read().subscribe(products => {
-      this.products = products
-      console.log(products)
+    this.productService.getProductAPI().subscribe((data: any) => {
+      debugger;
+      this.productsAPI = data.products;
+      // this.products = result;
+      console.log(data)
     })
   }
 

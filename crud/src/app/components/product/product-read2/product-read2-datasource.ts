@@ -9,26 +9,26 @@ import { Product } from './../product.model';
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: Product[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+  {id: 1, title: 'Hydrogen'},
+  {id: 2, title: 'Helium'},
+  {id: 3, title: 'Lithium'},
+  {id: 4, title: 'Beryllium'},
+  {id: 5, title: 'Boron'},
+  {id: 6, title: 'Carbon'},
+  {id: 7, title: 'Nitrogen'},
+  {id: 8, title: 'Oxygen'},
+  {id: 9, title: 'Fluorine'},
+  {id: 10, title: 'Neon'},
+  {id: 11, title: 'Sodium'},
+  {id: 12, title: 'Magnesium'},
+  {id: 13, title: 'Aluminum'},
+  {id: 14, title: 'Silicon'},
+  {id: 15, title: 'Phosphorus'},
+  {id: 16, title: 'Sulfur'},
+  {id: 17, title: 'Chlorine'},
+  {id: 18, title: 'Argon'},
+  {id: 19, title: 'Potassium'},
+  {id: 20, title: 'Calcium'},
 ];
 
 /**
@@ -94,7 +94,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
+        case 'name': return compare(a.title, b.title, isAsc);
         case 'id': return compare(+a.id!, +b.id!, isAsc);
         default: return 0;
       }
