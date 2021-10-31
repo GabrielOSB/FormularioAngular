@@ -12,7 +12,7 @@ export class ProductCreateComponent implements OnInit {
 
   product: Product = {
     title: '',
-    price: null!,
+    price: 0.0,
   }
 
   constructor(private ProductService: ProductService, private router: Router) {
@@ -23,9 +23,10 @@ export class ProductCreateComponent implements OnInit {
   }
 
   createProduct(): void {
-    this.ProductService.create(this.product).subscribe(() => {
+    
+    this.ProductService.create(this.product).subscribe((data: any) => {
       this.ProductService.showMessage('Product Created !')
-      
+
       this.router.navigate(['/products'])
     })
   }

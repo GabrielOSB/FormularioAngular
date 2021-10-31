@@ -30,12 +30,8 @@ export class ProductService {
     return this.http.get(this.baseUrlAPI, { headers: this.headers });
   }
 
-  create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, product);
-  }
-
-  read(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.baseUrl);
+  create(product: Product) {
+    return this.http.post(this.baseUrlAPI, product, { headers: this.headers});
   }
 
   readById(id: string): Observable<Product> {
@@ -44,7 +40,7 @@ export class ProductService {
   }
 
   update(product: Product): Observable<Product> {
-    const url = `${this.baseUrl}/${product.id}`;
+    const url = `${this.baseUrlAPI}/${product.id}`;
     return this.http.put<Product>(url, product);
   }
 
