@@ -7,11 +7,11 @@
       </mat-form-field>
   
       <mat-form-field>
-        <input matInput placeholder="Price (R$)" [(ngModel)]="productsAPI.Price" name="price"/> 
+        <input type="number" matInput placeholder="Price (R$)" [(ngModel)]="productsAPI.Price" name="price"/> 
       </mat-form-field>
     </form>
   
-    <button mat-raised-button (click)="updateProduct()" color="primary">Update</button>
+    <button mat-raised-button (click)="updateProduct(productsAPI.Title, productsAPI.Price, productsAPI.Id)" color="primary">Update</button>
   
     <button mat-raised-button (click)="cancel()">Cancel</button>
   </mat-card>
