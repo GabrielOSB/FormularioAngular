@@ -27,25 +27,27 @@ export class ProductService {
   }
 
   getProductAPI() {
-    return this.http.get(this.baseUrlAPI, { headers: this.headers });
+    return this.http.get(this.baseUrlAPI, {
+      headers: this.headers,
+    });
   }
 
   create(product: Product) {
-    return this.http.post(this.baseUrlAPI, product, { headers: this.headers});
+    return this.http.post(this.baseUrlAPI, product, { headers: this.headers });
   }
 
-  readById(id: string): Observable<Product> {
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.get<Product>(url);
+  readById(id: string) {
+    return this.http.post(this.baseUrlAPI + "/idproduct/" + Number(id), {
+      headers: new HttpHeaders({ APIKEY: "ACBY5j8EvKkmTeUCup6AOAm2" })
+    });
   }
 
-  update(product: Product): Observable<Product> {
-    const url = `${this.baseUrlAPI}/${product.id}`;
-    return this.http.put<Product>(url, product);
+  update(product: Product) {
+    return this.http.put(this.baseUrlAPI, product, { headers: this.headers });
   }
 
   delete(id: number): Observable<Product> {
-    const url = `${this.baseUrl}/${id}`;
+    const url = `${this.baseUrlAPI}/${id}`;
     return this.http.delete<Product>(url);
   }
 }
