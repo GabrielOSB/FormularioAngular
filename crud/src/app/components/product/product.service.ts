@@ -26,7 +26,7 @@ export class ProductService {
   }
 
   getProductAPI() {
-    return this.http.get(this.baseUrlAPI, {headers: this.headers,});
+    return this.http.get(this.baseUrlAPI, { headers: this.headers });
   }
 
   create(product: Product) {
@@ -35,7 +35,7 @@ export class ProductService {
 
   readById(id: string) {
     return this.http.post(this.baseUrlAPI + "/idproduct/" + Number(id), {
-      headers: new HttpHeaders({ APIKEY: "ACBY5j8EvKkmTeUCup6AOAm2" })
+      headers: new HttpHeaders({ APIKEY: "ACBY5j8EvKkmTeUCup6AOAm2" }),
     });
   }
 
@@ -43,7 +43,7 @@ export class ProductService {
     return this.http.put(this.baseUrlAPI, product, { headers: this.headers });
   }
 
-  delete(product: Product) {
-    return this.http.delete(this.baseUrlAPI, { headers: this.headers });
+  delete(id: number) {
+    return this.http.delete(this.baseUrlAPI + "/delete/" + id);
   }
 }
