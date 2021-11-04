@@ -11,7 +11,7 @@ import { Product } from "./../product.model";
   styleUrls: ["./product-update.component.css"],
 })
 export class ProductUpdateComponent implements OnInit {
-  productsAPI!: any;
+  productsAPI: any;
 
   product: Product = {
     id: 0,
@@ -33,7 +33,6 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   updateProduct(title: string, price: number, id: number): void {
-    debugger;
 
     this.product.id = id;
     this.product.title = title;

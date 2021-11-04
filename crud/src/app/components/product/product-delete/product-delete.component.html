@@ -3,15 +3,15 @@
   
     <form>
       <mat-form-field>
-        <input matInput placeholder="Name" [value]="product.title" name="name" disabled/>
+        <input matInput placeholder="Name" [value]="productsAPI.Title" name="name" disabled/>
       </mat-form-field>
   
       <mat-form-field>
-        <input matInput placeholder="Price (R$)" [value]="product.price" name="price" disabled/> 
+        <input type="number" matInput placeholder="Price (R$)" [value]="productsAPI.Price" name="price" disabled/> 
       </mat-form-field>
     </form>
   
-    <button mat-raised-button (click)="deleteProduct()" color="warn">Delete</button>
+    <button mat-raised-button (click)="deleteProduct(productsAPI.Title, productsAPI.Price, productsAPI.Id)" color="warn">Delete</button>
   
     <button mat-raised-button (click)="cancel()">Cancel</button>
   </mat-card>

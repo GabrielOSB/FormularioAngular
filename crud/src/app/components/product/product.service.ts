@@ -9,7 +9,6 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class ProductService {
-  baseUrl = "http://localhost:3001/products";
   baseUrlAPI = "http://localhost:55863/Product/v1/api";
   private headers: HttpHeaders;
 
@@ -27,9 +26,7 @@ export class ProductService {
   }
 
   getProductAPI() {
-    return this.http.get(this.baseUrlAPI, {
-      headers: this.headers,
-    });
+    return this.http.get(this.baseUrlAPI, {headers: this.headers,});
   }
 
   create(product: Product) {
@@ -46,8 +43,7 @@ export class ProductService {
     return this.http.put(this.baseUrlAPI, product, { headers: this.headers });
   }
 
-  delete(id: number): Observable<Product> {
-    const url = `${this.baseUrlAPI}/${id}`;
-    return this.http.delete<Product>(url);
+  delete(product: Product) {
+    return this.http.delete(this.baseUrlAPI, { headers: this.headers });
   }
 }
