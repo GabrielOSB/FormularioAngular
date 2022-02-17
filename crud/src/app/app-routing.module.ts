@@ -8,6 +8,10 @@ import { ProductCreateComponent } from "./components/product/product-create/prod
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 
+import { CoursesComponent } from './components/courses/courses.component';
+
+/* Rotas para o CRUD */
+
 const routes: Routes = [
   {
     path: "",
@@ -29,11 +33,16 @@ const routes: Routes = [
     component: ProductUpdateComponent
   },
 
+  
   {
     path: "products/delete/:id",
     component: ProductDeleteComponent
-  }
+  },
 
+  {
+    path: "courses",
+    component: CoursesComponent
+  }
 ];
 
 @NgModule({

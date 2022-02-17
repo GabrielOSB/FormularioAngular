@@ -34,7 +34,10 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
-import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component'
+import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
+import { CoursesComponent } from './components/courses/courses.component'
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 registerLocaleData(localePt);
 
@@ -50,7 +53,8 @@ registerLocaleData(localePt);
     ProductReadComponent,
     ProductRead2Component,
     ProductUpdateComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +72,8 @@ registerLocaleData(localePt);
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatProgressSpinnerModule
   ],
   providers: [{
     provide: LOCALE_ID,
