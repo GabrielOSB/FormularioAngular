@@ -1,18 +1,18 @@
 <mat-card>
-    <mat-card-title>Delete Product</mat-card-title>
+    <mat-card-title>Deletar Produto</mat-card-title>
   
     <form>
       <mat-form-field>
-        <input matInput placeholder="Name" [value]="productsAPI.Title" name="name" disabled/>
+        <input matInput placeholder="Nome" [value]="productsAPI.Title" name="name" disabled/>
       </mat-form-field>
   
       <mat-form-field>
-        <input type="number" matInput placeholder="Price (R$)" [value]="productsAPI.Price" name="price" disabled/> 
+        <input type="number" matInput placeholder="Preço (R$)" [value]="productsAPI.Price" name="price" disabled/> 
       </mat-form-field>
     </form>
   
-    <button mat-raised-button (click)="deleteProduct(productsAPI.Title, productsAPI.Price, productsAPI.Id)" color="warn">Delete</button>
+    <button mat-raised-button (click)="deleteProduct(productsAPI.Title, productsAPI.Price, productsAPI.Id)" color="warn">Deletar</button>
   
-    <button mat-raised-button (click)="cancel()">Cancel</button>
+    <button mat-raised-button (click)="cancel()">Cancelar</button>
   </mat-card>
   
